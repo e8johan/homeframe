@@ -18,6 +18,13 @@ Will serve as:
 
 
 
+## Setup
+
+Copy `main.qml.template` to `main.qml` to reflect local settings and 
+run `qml main.qml`.
+
+
+
 ## Licensing and Copyrights
 
 Copyright(C) 2023 Johan Thelin <e8johan@gmail.com>

@@ -25,9 +25,13 @@ Window {
 	width: 800
 	height: 480
 	visible: true
-	title: qsTr("HomeFrame")
+	// To force full screen
+	// visibility: Window.FullScreen
+        title: qsTr("HomeFrame")
 
-	HomeFrame {
-		anchors.fill: parent
-	}
+        HomeFrame {
+                anchors.fill: parent
+		// to rotate the scene
+		// transform: Rotation { origin.x: 400; origin.y: 240; angle: 180 }
+        }
 }
