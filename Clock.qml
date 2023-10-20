@@ -19,12 +19,13 @@
  */
 
 import QtQuick 2.12
+import "settings.js" as Settings
 
 Text {
 	id: root
 	text: "12:13"
-	font.pixelSize: 128
-	font.weight: Font.Thin
+	font.pixelSize: Settings.clockFontPixelSize
+	font.weight: Settings.clockFontWeight
 	color: "white"
 
 	Timer {

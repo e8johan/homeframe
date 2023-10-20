@@ -19,12 +19,13 @@
  */
 
 import QtQuick 2.12
+import "settings.js" as Settings
 
 Text {
 	id: root
-	text: "12:13"
-	font.pixelSize: 32
-	font.weight: Font.Medium
+	text: "Lördag 19 November 1983"
+	font.pixelSize: Settings.headlineFontPixelSize
+	font.weight: Settings.headlineFontWeight
 	color: "white"
 
 	Timer {
@@ -41,7 +42,6 @@ Text {
                     var dayOfWeek = date.getDay();
 
                     var dayOfWeekName = "Okänd dag"
-
                     switch(dayOfWeek)
                     {
                     case 0:
@@ -67,7 +67,48 @@ Text {
                         break;
                     }
 
-                    root.text = dayOfWeekName + " " + year + "-" + ("00" + (month+1)).slice(-2) + "-" + ("00" + day).slice(-2);
+                    var monthName = "Okänd månad"
+                    switch(month)
+                    {
+                        case 0:
+                            monthName= "Januari"
+                            break;
+                        case 1:
+                            monthName= "Febuari"
+                            break;
+                        case 2:
+                            monthName= "Mars"
+                            break;
+                        case 3:
+                            monthName= "April"
+                            break;
+                        case 4:
+                            monthName= "Maj"
+                            break;
+                        case 5:
+                            monthName= "Juni"
+                            break;
+                        case 6:
+                            monthName= "Juli"
+                            break;
+                        case 7:
+                            monthName= "Augusti"
+                            break;
+                        case 8:
+                            monthName= "September"
+                            break;
+                        case 9:
+                            monthName= "Oktober"
+                            break;
+                        case 10:
+                            monthName= "November"
+                            break;
+                        case 11:
+                            monthName= "December"
+                            break;
+                    }
+
+                    root.text = dayOfWeekName + " " + ("00" + day).slice(-2) + " " + monthName + " " + year;
 		}
 	}
 }
