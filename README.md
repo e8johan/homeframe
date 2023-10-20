@@ -41,3 +41,10 @@ GNU General Public License for more details.
 
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+### Acknowledgements
+
+The weather icons come from https://github.com/metno/weathericons/tree/main .
+
+The license from `assets/yr/LICENSE` applies to all assets under
+the `assets/yr` path.
