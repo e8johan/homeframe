@@ -28,4 +28,11 @@ Rectangle {
 		anchors.bottom: parent.bottom
 		anchors.margins: 16
 	}
+
+	YrNow {
+		anchors.right: parent.right
+		anchors.top: parent.top
+
+		anchors.topMargin: 16
+	}
 }
