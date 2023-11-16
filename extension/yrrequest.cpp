@@ -10,12 +10,12 @@ YrRequest::YrRequest(QObject *parent)
 
 void YrRequest::get(const QString &url)
 {
-    auto _request = QScopedPointer<QNetworkRequest>(new QNetworkRequest());
-    _request->setUrl(url);
-    _request->setTransferTimeout(5000);
-    _request->setRawHeader("User-Agent", "HomeFrame/0.1 github.com/e8johan/homeframe");
+    QNetworkRequest request;
+    request.setUrl(url);
+    request.setTransferTimeout(5000);
+    request.setRawHeader("User-Agent", "HomeFrame/0.1 github.com/e8johan/homeframe");
 
-    QNetworkReply *reply = m_manager->get(*_request);
+    QNetworkReply *reply = m_manager->get(request);
     QObject::connect(reply, &QNetworkReply::finished, this, &YrRequest::slotFinished);
 }
 
