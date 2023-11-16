@@ -2,8 +2,10 @@ import QtQuick 2.12
 import com.koderize.yr 0.1
 import "settings.js" as Settings
 
-Item {
+TapSlider {
     id: root
+
+    drawerWidth: 128*3 + 16*4
 
     property int refreshHour: 1
     property string location: "lat=60.10&lon=9.58&altitude=66"
@@ -52,33 +54,12 @@ Item {
         }
     }
 
-    Rectangle {
-        id: roundEdge
-
-        anchors.horizontalCenter: background.left
-        anchors.verticalCenter: background.verticalCenter
-
-        width: height
-        height: Settings.iconPixelSize*2
-        radius: height/2
-        color: "#101d24"
-    }
-
-    Rectangle {
-        id: background
-
-        anchors.right: parent.right
-        anchors.top: parent.top
-
-        width: height*1.25
-        height: Settings.iconPixelSize*2
-        color: "#101d24"
-    }
-
     Image {
         id: icon
 
-        anchors.centerIn: roundEdge
+        anchors.left: root
+        anchors.leftMargin: (settings.drawerHeight-icon.width)/2
+        anchors.verticalCenter: root.verticalCenter
 
         source: 'assets/yr/weather/' + root.now.icon + '.svg'
         width: Settings.iconPixelSize
@@ -86,7 +67,7 @@ Item {
     }
 
     Text {
-        anchors.verticalCenter: background.verticalCenter
+        anchors.verticalCenter: root.verticalCenter
         anchors.left: icon.right
         anchors.leftMargin: 4
 
@@ -106,6 +87,7 @@ Item {
         onTriggered: _reload();
     }
 
+    // TODO use this somehow
     Timer {
         id: errorRetryTimer
 
