@@ -29,10 +29,17 @@ Rectangle {
 		anchors.margins: 16
 	}
 
-	YrNow {
+	Column {
 		anchors.right: parent.right
 		anchors.top: parent.top
+		anchors.bottom: parent.bottom
 
 		anchors.topMargin: 16
+		anchors.bottomMargin: 16
+		spacing: 16
+
+		YrNow {}
+		TapSlider {}
+		TapSlider {}
 	}
 }
