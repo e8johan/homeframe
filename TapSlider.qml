@@ -53,6 +53,7 @@ Item {
 
         MouseArea {
             anchors.fill: parent
+            anchors.leftMargin: -roundEdge.width/2
             onClicked: {
                 if (root.state == "active") {
                     root.state = "inactive";
